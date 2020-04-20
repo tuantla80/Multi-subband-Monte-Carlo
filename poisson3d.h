@@ -1,0 +1,105 @@
+typedef struct {
+  int Mx_src ;
+  int Mx_channel ;
+  int My_ox ;
+  int My_si ;
+  int Mz_ox ;
+  int Mz_si ;
+  int Mz_box ;
+  int x ;
+  int x0 ;
+  int x1 ;
+  int xa ;
+  int xb ;
+  int xgate0 ;
+  int xgate1 ;
+  int y ;
+  int y0 ;
+  int y1 ;
+  int ya ;
+  int yb ;
+  int ygate0 ;
+  int ygate1 ;
+  int z ;
+  int z0 ;
+  int z1 ;
+  int za ;
+  int zb ;
+  int zgate ;
+} PoiNum ;
+
+typedef struct {
+  double *X ;
+  double *Y ;
+  double *Z ;
+  double *hx ;
+  double *hy ;
+  double *hz ;
+  double ***Phi ;
+  double ***phi ;
+  double ***n3d ;
+  double ***p3d ;
+} PoiMem ;
+
+typedef struct {
+  int _SOURCE_CONTACT ;
+  int _DRAIN_CONTACT ;
+  int _SOURCE_WALL ;
+  int _DRAIN_WALL ;
+  int _LEFT_WALL ;
+  int _RIGHT_WALL ;
+  int _TOP_WALL ;
+  int _BOTT_WALL ;
+  int _GATE_CONTACT ;
+  int _CHANNEL_SILICON ;
+  int _JUNCTION_SILICON ;
+  int _OXIDE ;
+  int _LEFT_INTERFACE ;
+  int _RIGHT_INTERFACE ;
+  int _TOP_INTERFACE ;
+  int _BOTT_INTERFACE ;
+  int _CORNERS ;
+} Region ;
+
+typedef struct {
+  int MaxIter ;
+  double ConvEps ;
+  char pctype[20] ;
+  char ksptype[20] ;
+  double ksprtol ;
+  int gmres_restart ;
+  int RoundGate ;
+} PoiParam ;
+
+PoiNum *PGetPoiNum() ;
+PoiNum GetPoiNum() ;
+PoiMem *PGetPoiMem() ;
+PoiParam *PGetPoiParam() ;
+PoiParam GetPoiParam() ;
+Region *PGetR_() ;
+Region GetR_() ;
+double ***GetPot() ;
+double ***GetPhiKth() ;
+double *GetPX() ;
+double *GetPY() ;
+double *GetPZ() ;
+double *GetHx() ;
+double *GetHy() ;
+double *GetHz() ;
+double ***GetN3d() ;
+double ***GetP3d() ;
+int GetRegion() ;
+
+void get_ijk() ;
+int get_p() ;
+
+int GetPx0() ;
+int GetPx1() ;
+int GetPy0() ;
+int GetPy1() ;
+int GetPz0() ;
+int GetPz1() ;
+int GetPya() ;
+int GetPyb() ;
+int GetPza() ;
+int GetPzb() ;

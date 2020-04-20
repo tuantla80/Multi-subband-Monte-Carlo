@@ -1,0 +1,9 @@
+#!/bin/tcsh
+#PBS -l nodes=2:dual:ppn=2
+#PBS -N msmc
+
+cd $PBS_O_WORKDIR
+
+set NPROC = `wc -l < $PBS_NODEFILE`
+
+mpirun -n $NPROC $PBS_O_WORKDIR/msmc  >! msmc.log  
